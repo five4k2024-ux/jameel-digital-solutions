@@ -24,6 +24,7 @@ async function refreshAuth() {
   const ok = await isAdmin();
   $('loginView').hidden = ok;
   $('dashboard').hidden = !ok;
+  document.body.classList.toggle('admin-authenticated', ok);
   $('loginForm').hidden = false;
   $('recoveryForm').hidden = true;
 
