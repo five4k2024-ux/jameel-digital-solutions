@@ -1,7 +1,14 @@
 const cfg = window.PORTFOLIO_CONFIG;
-const db = window.supabase.createClient(cfg.url, cfg.key);
+const db = window.supabase.createClient(cfg.url, cfg.key, {
+  auth: {
+    persistSession: false,
+    autoRefreshToken: false,
+    detectSessionInUrl: true
+  }
+});
 let projectCache = [];
 let recoveryMode = false;
+let authReady = false;
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
@@ -13,15 +20,19 @@ async function isAdmin() {
 }
 
 async function refreshAuth() {
+  // Fail closed: dashboard stays hidden until authentication is verified.
+  $('dashboard').hidden = true;
+
   if (recoveryMode) {
     $('loginView').hidden = false;
-    $('dashboard').hidden = true;
     $('loginForm').hidden = true;
     $('recoveryForm').hidden = false;
+    authReady = true;
     return;
   }
 
   const ok = await isAdmin();
+  authReady = true;
   $('loginView').hidden = ok;
   $('dashboard').hidden = !ok;
   document.body.classList.toggle('admin-authenticated', ok);
@@ -107,7 +118,13 @@ $('recoveryForm').addEventListener('submit', async e => {
 
 $('logoutBtn').onclick = async () => {
   await db.auth.signOut();
-  location.reload();
+  recoveryMode = false;
+  $('dashboard').hidden = true;
+  $('loginView').hidden = false;
+  $('loginForm').hidden = false;
+  $('recoveryForm').hidden = true;
+  $('adminPassword').value = '';
+  history.replaceState({}, document.title, 'admin.html');
 };
 
 async function loadProjects() {
