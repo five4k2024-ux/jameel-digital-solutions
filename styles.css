@@ -50,3 +50,17 @@ body.modal-open{overflow:hidden}
 .project-modal-tags span{padding:6px 10px;border:1px solid #31435f;border-radius:999px;font-size:11px;color:#dce5f2}
 @media(max-width:900px){.projects-grid{grid-template-columns:repeat(2,1fr)}.project-actions{grid-template-columns:1fr}}
 @media(max-width:620px){.projects-grid{grid-template-columns:1fr}.project-media{aspect-ratio:16/9}.project-content h3{font-size:20px}.project-actions{grid-template-columns:1fr 1fr}.project-modal{padding:10px}.project-modal-body h3{font-size:24px}}
+
+/* v7 - strict media frame: uploaded images/videos stay inside the project card */
+.project-card{height:100%;min-width:0}
+.project-media{width:calc(100% - 20px);height:220px;aspect-ratio:auto;flex:0 0 220px;isolation:isolate}
+.project-media>img,.project-media>video{position:absolute;inset:0;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center!important;border:0!important;margin:0!important;padding:0!important}
+.project-media>img{z-index:1}
+.project-media>video{z-index:1;background:#07101e}
+.project-media .media-badge,.project-media .media-duration,.project-media .media-play,.project-media .media-expand,.project-media .project-icon{position:absolute}
+.project-media-empty .project-icon{position:static}
+.project-content{min-width:0}
+.project-content h3,.project-content p{overflow-wrap:anywhere}
+@media(max-width:1100px){.project-media{height:205px;flex-basis:205px}}
+@media(max-width:620px){.project-media{height:210px;flex-basis:210px}}
+.project-media.media-load-error::before{content:"تعذر تحميل الصورة";position:absolute;inset:0;display:grid;place-items:center;color:#9fb0c8;font-size:13px;font-weight:800;background:linear-gradient(145deg,#16243a,#0c1525)}

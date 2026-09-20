@@ -22,7 +22,7 @@ function mediaMarkup(p,i){
   const video=p.video_url?esc(p.video_url):'';
   if(video){
     return `<div class="project-media has-video" data-action="video" data-id="${esc(p.id||String(i))}">
-      ${image?`<img src="${image}" alt="${esc(p.title)}" loading="lazy">`:`<video src="${video}" preload="metadata" muted playsinline></video>`}
+      ${image?`<img src="${image}" alt="${esc(p.title)}" loading="lazy" decoding="async" onerror="this.closest('.project-media').classList.add('media-load-error');this.remove()">`:`<video src="${video}" preload="metadata" muted playsinline></video>`}
       <span class="media-badge video-badge">فيديو</span>
       <span class="media-duration">▶</span>
       <button class="media-play" type="button" aria-label="تشغيل فيديو ${esc(p.title)}">▶</button>
@@ -31,7 +31,7 @@ function mediaMarkup(p,i){
   }
   if(image){
     return `<div class="project-media has-image" data-action="image" data-id="${esc(p.id||String(i))}">
-      <img src="${image}" alt="${esc(p.title)}" loading="lazy">
+      <img src="${image}" alt="${esc(p.title)}" loading="lazy" decoding="async" onerror="this.closest('.project-media').classList.add('media-load-error');this.remove()">
       <span class="media-badge image-badge">صور</span>
       <span class="media-expand" aria-hidden="true">⛶</span>
     </div>`;
