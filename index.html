@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#070b14" />
+  <meta name="description" content="معرض مشاريع جميل علي - مشاريع رقمية، عروض، صور وفيديوهات وخدمات حسب الطلب." />
+  <title>جميل علي | معرض المشاريع</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="#home" aria-label="الصفحة الرئيسية">
+        <span class="brand-mark">JA</span>
+        <span><strong>جميل علي</strong><small>معرض المشاريع والخدمات</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#projects">المشاريع</a>
+        <a href="#offers">العروض</a>
+        <a href="#partners">شركاؤنا</a>
+        <a href="#contact">تواصل</a>
+        <a class="btn btn-small" href="#order">اطلب مشروعك</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="orb orb-a"></div><div class="orb orb-b"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">تصميم • تطوير • أفكار رقمية</span>
+          <h1>نحوّل فكرتك إلى<br><span>مشروع يلفت الأنظار.</span></h1>
+          <p>صفحة احترافية لعرض المشاريع والخدمات والعروض المرئية، مع تجربة عربية سريعة ومتجاوبة على الجوال والكمبيوتر.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects">شاهد المشاريع</a>
+            <a class="btn btn-ghost" href="#order">اطلب الآن</a>
+          </div>
+          <div class="trust-row">
+            <div><b>+20</b><span>فكرة قابلة للتخصيص</span></div>
+            <div><b>24/7</b><span>عرض أعمالك أونلاين</span></div>
+            <div><b>100%</b><span>متجاوب مع الأجهزة</span></div>
+          </div>
+        </div>
+        <div class="hero-card reveal delay-1">
+          <div class="screen-top"><i></i><i></i><i></i><span>jameel-ali / projects</span></div>
+          <div class="screen-body">
+            <span class="screen-chip">Featured Project</span>
+            <h3>واجهة رقمية حديثة</h3>
+            <p>تجربة تفاعلية تعرض أعمالك بصورة أنيقة وسريعة.</p>
+            <div class="mini-cards"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">أعمال مختارة</span>
+          <h2>مشاريع تم إنشاؤها بعناية</h2>
+          <p>مجموعة من البرامج والأنظمة والمواقع التي تم تطويرها وتنفيذها، ويتم تحديثها من لوحة الإدارة الخاصة.</p>
+        </div>
+        <div class="filter-row reveal" id="filters"></div>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section dark-band" id="offers">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">العروض والوسائط</span>
+          <h2>صور وفيديوهات تبيع الفكرة قبل الكلام</h2>
+          <p>أضف صورك وفيديوهاتك داخل مجلد <code>assets</code> وسيظهر المحتوى بشكل مرتب وجذاب.</p>
+        </div>
+        <div class="media-grid">
+          <article class="media-card media-feature reveal">
+            <div class="video-shell">
+              <video controls playsinline poster="assets/images/offer-poster.svg">
+                <source src="assets/videos/offer-demo.mp4" type="video/mp4" />
+              </video>
+              <div class="video-fallback">ضع فيديوك في <b>assets/videos/offer-demo.mp4</b></div>
+            </div>
+            <div class="media-content"><span>عرض مميز</span><h3>مساحة خاصة لأقوى عروضك</h3><p>يمكن استبدال هذا الفيديو بأي إعلان أو استعراض مشروع.</p></div>
+          </article>
+          <article class="media-card reveal delay-1"><img src="assets/images/offer-1.svg" alt="عرض 1"><div class="media-content"><span>تصميم</span><h3>عرض مرئي احترافي</h3><p>صورك تظهر بنسبة عرض مناسبة ومتجاوبة.</p></div></article>
+          <article class="media-card reveal delay-2"><img src="assets/images/offer-2.svg" alt="عرض 2"><div class="media-content"><span>خدمة</span><h3>إبراز التفاصيل المهمة</h3><p>اجعل الزائر يصل لفكرتك بسرعة.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="partners">
+      <div class="container section-head reveal">
+        <span class="eyebrow">من شركائنا</span>
+        <h2>شراكات نعتز بها</h2>
+      </div>
+      <div class="marquee" aria-label="شريط الشركاء">
+        <div class="marquee-track" id="partnersTrack"></div>
+      </div>
+    </section>
+
+    <section class="section" id="order">
+      <div class="container order-grid">
+        <div class="order-copy reveal">
+          <span class="eyebrow">ابدأ مشروعك</span>
+          <h2>عندك فكرة؟ خلّها تظهر بالشكل الذي تستحقه.</h2>
+          <p>املأ البيانات وسيصل طلبك مباشرة إلى لوحة الإدارة، ويمكنك أيضًا التواصل عبر البريد.</p>
+          <a class="mail-link" href="mailto:alk_1379@hotmail.com">alk_1379@hotmail.com</a>
+        </div>
+        <form class="order-form reveal delay-1" id="orderForm">
+          <label>الاسم<input id="name" required placeholder="اسمك الكريم"></label>
+          <label>رقم التواصل<input id="phone" placeholder="05xxxxxxxx"></label>
+          <label>نوع المشروع<select id="type"><option>موقع إلكتروني</option><option>صفحة هبوط</option><option>متجر إلكتروني</option><option>نظام إدارة</option><option>تصميم واجهة</option><option>أخرى</option></select></label>
+          <label>تفاصيل الطلب<textarea id="details" required rows="5" placeholder="اشرح فكرتك باختصار..."></textarea></label>
+          <button class="btn full" type="submit">إرسال طلب المشروع</button>
+          <small id="orderStatus">يتم حفظ الطلب بشكل آمن وإرساله إلى لوحة الإدارة.</small>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-box reveal">
+        <div><span class="eyebrow">تواصل معنا</span><h2>جاهزين لفكرتك القادمة</h2><p>للطلبات والاستفسارات والشراكات.</p></div>
+        <div class="contact-actions">
+          <a class="btn" href="mailto:alk_1379@hotmail.com">إرسال بريد</a>
+          <a class="btn btn-ghost" href="#order">طلب مشروع</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div class="brand"><span class="brand-mark">JA</span><span><strong>جميل علي</strong><small>Project Showcase</small></span></div>
+      <p>© <span id="year"></span> جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
+  <script src="supabase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
